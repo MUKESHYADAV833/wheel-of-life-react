@@ -1,8 +1,36 @@
-body {
-  background-color: aqua;
+  body{
+    background-image: linear-gradient(180deg, #c2cacb,#ee8d3e);
+    height: 100vh;
+    margin: 0%;
+
+  }
+  .head{
+  font-size: xxx-large;
+  font-weight: 550;
+  text-align: center;
+  color: white;
+  width: 80%;
+  padding-top: 1%;
+  }
+  .header{
+    background-image: linear-gradient(45deg, transparent, blue, transparent);
+    height: 5%;
+    display: flex;
+
+  }
+  #logo{
+    width: 5%;
+    margin-left: 1%;
+   }
+ /* .t{
+   display: flex;
+
+  }
+.t1{
+  display: flex;
+}  */
+.parent {
+  display: flex;
+  justify-content: center;
 }
 
-.head{
-  font-size: 500%;
-  text-align: center;
-}
