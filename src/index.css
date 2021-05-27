@@ -2,19 +2,19 @@
     /* background-image: linear-gradient(180deg, #c2cacb,#ee8d3e); */
     height: 100vh;
     margin: 0%;
-    background-color: #ebc2c9ab;
+    background-color: #80808042;;
 
   }
   .head{
   font-size: xxx-large;
   font-weight: 550;
-  text-align: center;
-  color: white;
+  color:silver;
   width: 80%;
   padding-top: 1%;
+  margin-left: 2%;
   }
   .header{
-    background-image: linear-gradient(45deg, transparent, blue, transparent);
+    background-color: white;
     height: 5%;
     display: flex;
 
@@ -23,98 +23,27 @@
     width: 5%;
     margin-left: 1%;
    }
-
-   #l1{
-     background-color: aqua;
+   .child{
+     display: flex;
    }
-   #l2{
-     background-color: blanchedalmond;
+
+   .child1{
+     display: flex;
+
    }
-   #l3{
-     background-color: blue;
+
+   .tile{
+     width: 210px;
+    height: 210px;
+    line-height: 210px;
+    text-align: center;
+    background-color: white;
+    margin: 2%;
+    color: black;
+    font-size: x-large;
+    font-weight: 600;
    }
-   #l4{
-     background-color: blueviolet;
+
+   .labels{
+     display: flex;
    }
-   #l5{
-     background-color: brown;
-   }
-   #l6{
-     background-color: chartreuse;
-   }
-   #l7{
-     background-color: chocolate;
-   }
-   #l8{
-     background-color:yellowgreen;
-   }
-.parent{
-  display: flex;
-  justify-content: center;
-}
-
-.pair{
-  display: flex;
-}
-.tiles{
-  justify-content: center;
-  text-align: center;
- 
-}
-
-.data{
-  text-align: center;
-  background-color: rgb(182, 189, 190);
-  width: 100px;
-  height: 50px;
-}
-
-#l1{
-  padding: 15%;
-  font-size: 20px;
-  font-weight: 600;
-}
-
-#l2{
-  padding: 20% 15%;
-  font-size: 20px;
-  font-weight: 600;
-}
-
-
-#l3{
-  padding: 20% 25%;
-  font-size: 20px;
-  font-weight: 600;
-}
-#l5{
-  padding:19% 19%;
-  font-size: 20px;
-  font-weight: 600;
-}
-
-#l4{
-  padding: 18%;
-    font-size: 20px;
-  font-weight: 600;
-}
-
-#l6{
-  padding:16% 1%;
-    font-size: 20px;
-  font-weight: 600;
-}
-
-
-#l7{
-  padding: 20% 15%;
-  font-size: 20px;
-  font-weight: 600;
-}
-
-
-#l8{
-  padding: 22% 19%;
-  font-size: 20px;
-  font-weight: 600;
-}
