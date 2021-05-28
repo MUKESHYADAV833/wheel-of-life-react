@@ -1,66 +1,68 @@
-  body{
-    /* background-image: linear-gradient(180deg, #c2cacb,#ee8d3e); */
-    height: 100vh;
-    margin: 0%;
-    background-color: #80808042;;
+body{
+  /* background-image: linear-gradient(180deg, #c2cacb,#ee8d3e); */
+  height: 100vh;
+  margin: 0%;
+  background-color: #80808042;;
+}
 
-  }
-  .head{
+.head{
   font-size: xxx-large;
   font-weight: 550;
-  color:silver;
+  color:#137dbe;
   width: 80%;
   padding-top: 1%;
   margin-left: 2%;
-  }
-  .header{
-    background-color: white;
-    height: 5%;
-    display: flex;
+  border-bottom: solid;
+  border-bottom-width: 2px;
+}
 
-  }
-  #logo{
-    width: 5%;
-    margin-left: 1%;
-   }
-   .child{
-     display: flex;
-     justify-content: center;
-   }
+.header{
+  height: 5%;
+  display: flex;
+}
 
-   .child1{
-     display: flex;
-     justify-content: center;
-   }
+#logo{
+  width: 5%;
+  margin-left: 1%;
+}
 
-   .tile{
-     width: 210px;
-    height: 210px;
-    line-height: 210px;
-    text-align: center;
-    background-color: white;
-    margin: 2%;
-    color: black;
-    font-size: larger;
-    font-weight: 600;
-    border-radius: 10%;
-    box-shadow: 10px 10px #00000063;
+.child{
+  display: flex;
+  justify-content: center;
+}
 
-   }
+.child1{
+  display: flex;
+  justify-content: center;
+}
 
-   .labels{
-     display: flex;
-     justify-content: center;
-     line-height: 60px;
-     text-align: center;
-   }
+.tile{
+  width: 210px;
+  height: 210px;
+  line-height: 210px;
+  text-align: center;
+  background-color: #b5a0a0;
+  margin: 2%;
+  color: black;
+  font-size: larger;
+  font-weight: 600;
+  border-radius: 10%;
+  box-shadow: 10px 10px #00000063;
+}
 
-   .tab{
-    margin: 1% 2%;
-    background-color:cadetblue;
-    width: 48px;
-    font-size: x-large;
-    font-weight: 600;
-    border-radius: 40%;
-    box-shadow: 5px 5px #00000063;
-   }
+.labels{
+  display: flex;
+  justify-content: center;
+  line-height: 60px;
+  text-align: center;
+}
+
+.tab{
+  margin: 1% 2%;
+  background-color:cadetblue;
+  width: 48px;
+  font-size: x-large;
+  font-weight: 600;
+  border-radius: 40%;
+  box-shadow: 5px 5px #00000063;
+}
