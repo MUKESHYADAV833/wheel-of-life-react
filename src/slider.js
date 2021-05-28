@@ -4,16 +4,16 @@ class Table extends React.Component{
   render() {
     return (
       <div className="labels">
-        <div>1</div>
-        <div>2</div>
-        <div>3</div>
-        <div>4</div>
-        <div>5</div>
-        <div>6</div>
-        <div>7</div>
-        <div>8</div>
-        <div>9</div>
-        <div>10</div>
+        <div className="tab">1</div>
+        <div className="tab">2</div>
+        <div className="tab">3</div>
+        <div className="tab">4</div>
+        <div className="tab">5</div>
+        <div className="tab">6</div>
+        <div className="tab">7</div>
+        <div className="tab">8</div>
+        <div className="tab">9</div>
+        <div className="tab">10</div>
       </div>
     );
   }
