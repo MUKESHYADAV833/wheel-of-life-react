@@ -1,12 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import Header from './App';
+import UIModel from './App';
 
 
 ReactDOM.render(
   <React.StrictMode>
-    <Header />
+    <UIModel />
   </React.StrictMode>,
   document.getElementById('root')
 );

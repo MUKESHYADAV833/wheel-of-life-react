@@ -1,10 +1,10 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { fa } from '@fortawesome/free-solid-svg-icons';
+import { faRefresh } from '@fortawesome/free-solid-svg-icons'
 import Tiles from './tile' ;
 import Table from './slider'
-import { faAngleDoubleRight } from '@fortawesome/free-solid-svg-icons';
-class Header extends React.Component {
+// import { faAngleDoubleRight } from '@fortawesome/free-solid-svg-icons';
+class UIModel extends React.Component {
   constructor(props) {
     super(props);
     this.state = null
@@ -21,7 +21,7 @@ class Header extends React.Component {
         <div className="header">
           <img id="logo" src='./wings2life.png' />
           <div className="head">Wheel Of Life</div>
-          <FontAwesomeIcon icon="fa-solid fa-arrows-rotate" />      
+          <div><FontAwesomeIcon icon={faRefresh} /></div>
         </div>
         <div><Table/></div>
         <div><Tiles /></div>
@@ -32,5 +32,5 @@ class Header extends React.Component {
   }
 }
 
-export default Header;
+export default UIModel;
 
