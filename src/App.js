@@ -1,18 +1,31 @@
 import React from 'react';
-import 'font-awesome/css/font-awesome.min.css';
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { fa } from '@fortawesome/free-solid-svg-icons';
+import Tiles from './tile' ;
+import Table from './slider'
+import { faAngleDoubleRight } from '@fortawesome/free-solid-svg-icons';
 class Header extends React.Component {
   constructor(props) {
     super(props);
-    this.state =null
+    this.state = null
   }
-  
+
+  showdataentry() {
+    console.log("haii");
+  }
+
+
   render() {
     return (
-      <div className="header">
-      <div className="head">Wheel Of Life</div>
-     <div> <i className="fab fa-amazon"></i></div>
-      {/* <div><i className="fa fa-spinner fa-spin">no spinner but why</i></div> */}
+      <div>
+        <div className="header">
+          <img id="logo" src='./wings2life.png' />
+          <div className="head">Wheel Of Life</div>
+          <FontAwesomeIcon icon="fa-solid fa-arrows-rotate" />      
+        </div>
+        <div><Table/></div>
+        <div><Tiles /></div>
+     
       </div>
 
     );
@@ -20,3 +33,4 @@ class Header extends React.Component {
 }
 
 export default Header;
+
