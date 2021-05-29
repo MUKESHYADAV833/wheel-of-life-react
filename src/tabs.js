@@ -1,6 +1,6 @@
 import React from 'react';
 
-class Table extends React.Component{
+class Tabs extends React.Component{
   render() {
     return (
       <div className="labels">
@@ -18,4 +18,4 @@ class Table extends React.Component{
     );
   }
 }
-export default Table;
+export default Tabs;
