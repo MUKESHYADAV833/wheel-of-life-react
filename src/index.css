@@ -2,28 +2,51 @@ body{
   /* background-image: linear-gradient(180deg, #c2cacb,#ee8d3e); */
   height: 100vh;
   margin: 0%;
-  background-color: #80808042;;
+  background-color: #80808012;
 }
 
 .head{
   font-size: xxx-large;
   font-weight: 550;
   color:#137dbe;
-  width: 80%;
   padding-top: 1%;
   margin-left: 2%;
-  border-bottom: solid;
-  border-bottom-width: 2px;
+  width: 95%;
 }
 
 .header{
   height: 5%;
+  display: flex;  
+}
+
+#line{
   display: flex;
+  border-bottom: solid #137dbe;
+  border-bottom-width: 2px;
+  width: 80%;
+
 }
 
 #logo{
   width: 5%;
   margin-left: 1%;
+}
+
+
+#refresh{
+  font-size:  xxx-large;
+  margin: 1%;
+}
+
+#mail{
+  font-size:  xxx-large;
+  margin: 1%;
+}
+
+#done{
+  font-size:  xxx-large;
+  margin: 1%;
+
 }
 
 .child{
