@@ -1,8 +1,9 @@
 import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faRefresh } from '@fortawesome/free-solid-svg-icons'
 import Tiles from './tile' ;
 import Table from './slider'
+import SyncIcon from '@material-ui/icons/Sync';
+import DoneIcon from '@material-ui/icons/Done';
+import MailOutlineIcon from '@material-ui/icons/MailOutline';
 // import { faAngleDoubleRight } from '@fortawesome/free-solid-svg-icons';
 class UIModel extends React.Component {
   constructor(props) {
@@ -20,8 +21,12 @@ class UIModel extends React.Component {
       <div>
         <div className="header">
           <img id="logo" src='./wings2life.png' />
+          <div id="line">
           <div className="head">Wheel Of Life</div>
-          <div><FontAwesomeIcon icon={faRefresh} /></div>
+          <MailOutlineIcon id="mail"/>
+          <DoneIcon id="done"/>
+          <SyncIcon id="refresh" />
+          </div>
         </div>
         <div><Table/></div>
         <div><Tiles /></div>
