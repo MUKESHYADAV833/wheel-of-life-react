@@ -1,12 +1,24 @@
 import React from "react";
-import reactDom from "react-dom";
 
 class Tiles extends React.Component {
+  constructor(props){
+    super(props)
+    this.state = {
+      text : "Friends and Family"
+    }
+  }
+  onDrop = (ev, cat) => {
+    this.setState(this.state, "1");
+    console.log(cat,"dhfgdf");
+  }
+  onDragOver = (e,id) => {
+    console.log(id);
+  }
   render() {
     return (
       <div className="parent">
         <div className="child">
-          <div className="tile" id="friends">Friends and Family</div>
+          <div onDragOver = {(e) => this.onDragOver(e, "friends")} onDrop = {(e) => this.onDrop(e, "friends")} className="tile" id="friends">{this.state.text}</div>
           <div className="tile" id="Rela">Relationships</div>
           <div className="tile" id="wealth">Wealth</div>
           <div className="tile" id="Personal"> Personal and Growth</div>
