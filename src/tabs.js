@@ -1,7 +1,7 @@
 import React from 'react';
 
 class Tabs extends React.Component{
-  onDragStart = (ev, id) => {
+  onDragStart = (e, id) => {
     console.log('dragstart:', id);
   }
   render() {
