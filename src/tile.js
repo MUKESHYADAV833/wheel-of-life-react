@@ -8,11 +8,12 @@ class Tiles extends React.Component {
     }
   }
   onDrop = (ev, cat) => {
-    this.setState(this.state, "1");
     console.log(cat,"dhfgdf");
   }
   onDragOver = (e,id) => {
     console.log(id);
+    e.stopPropagation();
+    e.preventDefault();
   }
   render() {
     return (

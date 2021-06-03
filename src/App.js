@@ -15,6 +15,9 @@ class UIModel extends React.Component {
     console.log("haii");
   }
 
+  refreshPage = () => {
+    window.location.reload();
+  }
 
   render() {
     return (
@@ -25,7 +28,7 @@ class UIModel extends React.Component {
             <div className="head">Wheel Of Life</div>
             <MailOutlineIcon id="mail" />
             <DoneIcon id="done" />
-            <SyncIcon id="refresh" />
+            <SyncIcon onClick={this.refreshPage} id="refresh" />
           </div>
         </div>
         <div><Tabs /></div>
