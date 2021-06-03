@@ -1,6 +1,5 @@
 import React from 'react';
-import Tiles from './tile';
-import Tabs from './tabs'
+import DragDrop from './function'
 import SyncIcon from '@material-ui/icons/Sync';
 import DoneIcon from '@material-ui/icons/Done';
 import MailOutlineIcon from '@material-ui/icons/MailOutline';
@@ -31,8 +30,7 @@ class UIModel extends React.Component {
             <SyncIcon onClick={this.refreshPage} id="refresh" />
           </div>
         </div>
-        <div><Tabs /></div>
-        <div><Tiles /></div>
+        <DragDrop/>
 
       </div>
 
