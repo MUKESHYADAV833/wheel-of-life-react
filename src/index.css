@@ -51,12 +51,12 @@ body{
   color: #888888;
 }
 
-.child{
+.child1{
   display: flex;
   justify-content: center;
 }
 
-.child1{
+.child2{
   display: flex;
   justify-content: center;
 }
