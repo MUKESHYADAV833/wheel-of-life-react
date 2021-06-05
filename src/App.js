@@ -27,7 +27,7 @@ class UIModel extends React.Component {
             <div className="head">Wheel Of Life</div>
             <MailOutlineIcon id="mail" />
             <DoneIcon id="done" />
-            <SyncIcon onClick={this.refreshPage} id="refresh" />
+            <SyncIcon onClick={this.refreshPage} id="refresh"/>
           </div>
         </div>
         <DragDrop/>
