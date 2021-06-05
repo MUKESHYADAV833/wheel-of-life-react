@@ -91,3 +91,13 @@ body{
   border-radius: 40%;
   box-shadow: 5px 5px #00000063;
 }
+
+.num{
+  margin: 1% 2%;
+  background-color:#7ccbce;
+  width: 48px;
+  font-size: xx-large;
+  font-weight: 600;
+  border-radius: 40%;
+  box-shadow: 5px 5px #00000063;
+}

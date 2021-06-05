@@ -5,16 +5,16 @@ class DragDrop extends React.Component {
         super(props)
         this.state = {
             items: [
-                { no: 1, text: "This is text 1" },
-                { no: 2, text: "This is text 2" },
-                { no: 3, text: "This is text 3" },
-                { no: 4, text: "This is text 4" },
-                { no: 5, text: "This is text 3" },
-                { no: 6, text: "This is text 3" },
-                { no: 7, text: "This is text 3" },
-                { no: 8, text: "This is text 3" },
-                { no: 9, text: "This is text 3" },
-                { no: 10, text: "This is text 3" }
+                { no: 1},
+                { no: 2},
+                { no: 3},
+                { no: 4},
+                { no: 5},
+                { no: 6},
+                { no: 7},
+                { no: 8},
+                { no: 9},
+                { no: 10}
             ],
             topContainer: [
                 { text: "Friends and Family" },
@@ -27,33 +27,32 @@ class DragDrop extends React.Component {
                 { text: "Fun and Recreation" },
                 { text: "Possession" },
                 { text: "Career" }
-            ]
+            ],
+            mark: []
         }
     }
 
     onDragStart = (e, v) => {
-        e.dataTransfer.dropEffect = "move";
-        e.dataTransfer.setData("text/plain", v)
+        e.dataTransfer.dropEffect = "copy";
+        e.dataTransfer.setData("text", v)
     }
 
     allowDrop = ev => {
         ev.preventDefault();
     }
 
-    onDropLeft = e => {
+    onDropTop = e => {
         e.preventDefault();
         const data = e.dataTransfer.getData("text/plain");
-        let { topContainer } = this.state;
-        topContainer.push(data);
-        this.setState({ topContainer });
+        let { mark } = this.state;
+        mark.push(data);
     }
 
-    onDropRight = e => {
+    onDropBottom = e => {
         e.preventDefault();
         const data = e.dataTransfer.getData("text/plain");
         let { bottomContainer } = this.state;
         bottomContainer.push(data);
-        this.setState({ bottomContainer });
     }
 
     render() {
@@ -71,7 +70,7 @@ class DragDrop extends React.Component {
                     </div>
                 </div>
                 <div className="parent">
-                    <div className="child1" onDragOver={this.allowDrop} onDrop={this.onDropLeft}>
+                    <div className="child1" onDragOver={this.allowDrop} onDrop={this.onDropTop}>
                         {
                             topContainer.map(itm => {
                                 return (
@@ -82,7 +81,7 @@ class DragDrop extends React.Component {
                             })
                         }
                     </div>
-                    <div className="child2" onDragOver={this.allowDrop} onDrop={this.onDropLeft}>
+                    <div className="child2" onDragOver={this.allowDrop} onDrop={this.onDropBottom}>
                         {
                             bottomContainer.map(itm => {
                                 return <div className="tile">{itm.text}</div>

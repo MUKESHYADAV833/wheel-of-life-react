@@ -1,5 +1,5 @@
 import React from 'react';
-import DragDrop from './function'
+import DragDrop from './new'
 import SyncIcon from '@material-ui/icons/Sync';
 import DoneIcon from '@material-ui/icons/Done';
 import MailOutlineIcon from '@material-ui/icons/MailOutline';
