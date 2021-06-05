@@ -49,16 +49,13 @@ class DragDrop extends React.Component {
         { text: "Friends and Family" },
         { text: "Relationships" },
         { text: "Wealth" },
-        { text: "Personal and Growth" }
-      ],
-      texts2: [
+        { text: "Personal and Growth" },
         { text: "Health" },
         { text: "Fun and Recreation" },
         { text: "Possession" },
         { text: "Career" }
       ],
-      rightContainer: [],
-      leftContainer: []
+      leftContainer: [null,null,null,null,null,null,null,null]
     }
   }
 
@@ -78,15 +75,6 @@ class DragDrop extends React.Component {
     leftContainer.push(data);
     this.setState({ leftContainer });
   }
-
-  onDropBottom = e => {
-    e.preventDefault();
-    const data = e.dataTransfer.getData("text/plain");
-    let { rightContainer } = this.state;
-    rightContainer.push(data);
-    this.setState({ rightContainer });
-  }
-
   render() {
     const { items, leftContainer, rightContainer, texts1, texts2 } = this.state;
 
@@ -101,8 +89,7 @@ class DragDrop extends React.Component {
             }
           </div>
         </div>
-        <div className="parent">
-          <div className="child1" onDragOver={this.allowDrop} onDrop={this.onDropTop}>
+          <div className="parent" onDragOver={this.allowDrop} onDrop={this.onDropTop}>
             {
               leftContainer.map(itm => {
                 return (
@@ -110,7 +97,9 @@ class DragDrop extends React.Component {
                     {itm}
                   </div>
                 )
-              }),
+              })
+            }
+            {
               texts1.map(itm => {
                 return (
                   <div className="tile">
@@ -120,17 +109,6 @@ class DragDrop extends React.Component {
               })
             }
           </div>
-          <div className="child2" onDragOver={this.allowDrop} onDrop={this.onDropBottom}>
-            {
-              // rightContainer.map(itm => {
-              //   return <p>{itm}</p>
-              // }),
-              texts2.map(itm => {
-                return <div className="tile">{itm.text}</div>
-              })
-            }
-          </div>
-        </div>
       </div>
     )
   }

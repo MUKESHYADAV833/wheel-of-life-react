@@ -51,19 +51,16 @@ body{
   color: #888888;
 }
 
-.child1{
+.parent{
   display: flex;
-  justify-content: center;
-}
-
-.child2{
-  display: flex;
+  flex-flow: wrap;
   justify-content: center;
 }
 
 .tile{
+  min-width: 200px;
   width: 210px;
-  height: 210px;
+  height: 203px;
   line-height: 210px;
   text-align: center;
   background-color: #d6a0ca;
@@ -93,6 +90,7 @@ body{
 }
 
 .num{
+  display: none;
   margin: 1% 2%;
   background-color:#7ccbce;
   width: 48px;
