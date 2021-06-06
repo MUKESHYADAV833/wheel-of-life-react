@@ -55,7 +55,7 @@ class DragDrop extends React.Component {
         { no: 7, text: "Possession" },
         { no: 8, text: "Career" }
       ],
-      leftContainer: []
+      container: []
     }
   }
 
@@ -63,26 +63,46 @@ class DragDrop extends React.Component {
     e.dataTransfer.dropEffect = "move";
     e.dataTransfer.setData("text/plain", v);
     const data = e.dataTransfer.getData("text/plain");
-    let { leftContainer } = this.state;
-    leftContainer.push(data);
-    this.setState({ leftContainer });
+    let { container } = this.state;
+    container.push(data);
+    this.setState({ container });
   }
 
   allowDrop = ev => {
     ev.preventDefault();
   }
 
-  onDropTop = (e, id) => {
+  onDropTop = (e, props) => {
     e.preventDefault();
+    console.log("id:" + props.id + "i:" + props.i);
+    // var val = 
   }
+
   render() {
-    const { items, leftContainer, texts1, ids } = this.state;
-    var tempHtml=[];
-    for( var i = 0 ; i < texts1.length ; i++ ){
-      tempHtml.push(<div id={i+1} className="tile" onDragOver={this.allowDrop} onDrop={(e) => this.onDropTop(e, this.state.ids)}>
-          {this.state.texts1[i].text}
-        </div>)
+    const { items, container, texts1, id } = this.state;
+    var tempHtml = [];
+    
+    for (var i = 0; i < texts1.length; i++) {
+      tempHtml.push(
+        <div className="tile">
+          <div className="child1" id={"a" + (i+1)} /*onDragOver={this.allowDrop} onDrop={(e, i) => this.onDropTop.bind(e, i)}*/>10</div>
+          <div className="child2" id={this.state.texts1[i].no} onDragOver={this.allowDrop} onDrop={(e, i) => this.onDropTop.bind(e, i)}>
+            {this.state.texts1[i].text}
+          </div>
+        </div>
+      )
     }
+
+    // for (var i = 1; i <= texts1.length; i++) {
+    //   tempHtml.push(
+    //     <div className="tile">
+    //       <div className="child1" id={"a" + (i)}>10</div>
+    //       <div className="child2" id={this.state.texts1[i-1].no} onDragOver={this.allowDrop} onDrop={(e, id) => this.onDropTop.bind(e, id, i)}>
+    //         {this.state.texts1[i-1].text}
+    //       </div>
+    //     </div>
+    //   )
+    // }
 
     return (
       <div>
@@ -95,7 +115,7 @@ class DragDrop extends React.Component {
         </div>
         <div className="parent">
           {/* {
-            leftContainer.map(itm => {
+            container.map(itm => {
               return (
                 <div className="num">
                   {itm}
@@ -104,13 +124,13 @@ class DragDrop extends React.Component {
             })
           } */}
           {tempHtml
-            
+
             // texts1.map(itm => {
-              // return (
-              //   <div id={this.state.ids} className="tile" onDragOver={this.allowDrop} onDrop={(e) => this.onDropTop(e, this.state.ids)}>
-              //     {itm.text}
-              //   </div>
-              // )
+            // return (
+            //   <div id={this.state.ids} className="tile" onDragOver={this.allowDrop} onDrop={(e) => this.onDropTop(e, this.state.ids)}>
+            //     {itm.text}
+            //   </div>
+            // )
             // })
           }
         </div>
