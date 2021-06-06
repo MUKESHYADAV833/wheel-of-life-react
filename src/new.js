@@ -1,33 +1,33 @@
 import React, { Component } from 'react'
 
-const styles = {
-  left: {
-    width: '250px',
-    height: '150px',
-    border: '1px solid #DCDCDC',
-    float: 'left'
-  },
-  right: {
-    width: '250px',
-    height: '150px',
-    border: '1px solid #DCDCDC',
-    float: 'left',
-    marginLeft: '40px'
-  },
-  droppable: {
-    margin: '0 auto',
-    width: '50%',
-    marginTop: '80px'
-  },
-  para: {
-    marginRight: '11px',
-    border: '1px solid #DCDCDC',
-    padding: '12px 16px',
-    borderRadius: '50%',
-    width: '15px',
-    float: 'left'
-  }
-}
+// const styles = {
+//   left: {
+//     width: '250px',
+//     height: '150px',
+//     border: '1px solid #DCDCDC',
+//     float: 'left'
+//   },
+//   right: {
+//     width: '250px',
+//     height: '150px',
+//     border: '1px solid #DCDCDC',
+//     float: 'left',
+//     marginLeft: '40px'
+//   },
+//   droppable: {
+//     margin: '0 auto',
+//     width: '50%',
+//     marginTop: '80px'
+//   },
+//   para: {
+//     marginRight: '11px',
+//     border: '1px solid #DCDCDC',
+//     padding: '12px 16px',
+//     borderRadius: '50%',
+//     width: '15px',
+//     float: 'left'
+//   }
+// }
 
 class DragDrop extends React.Component {
   constructor(props) {
@@ -46,69 +46,74 @@ class DragDrop extends React.Component {
         { no: 10 }
       ],
       texts1: [
-        { text: "Friends and Family" },
-        { text: "Relationships" },
-        { text: "Wealth" },
-        { text: "Personal and Growth" },
-        { text: "Health" },
-        { text: "Fun and Recreation" },
-        { text: "Possession" },
-        { text: "Career" }
+        { no: 1, text: "Friends and Family" },
+        { no: 2, text: "Relationships" },
+        { no: 3, text: "Wealth" },
+        { no: 4, text: "Personal and Growth" },
+        { no: 5, text: "Health" },
+        { no: 6, text: "Fun and Recreation" },
+        { no: 7, text: "Possession" },
+        { no: 8, text: "Career" }
       ],
-      leftContainer: [null,null,null,null,null,null,null,null]
+      leftContainer: []
     }
   }
 
   onDragStart = (e, v) => {
     e.dataTransfer.dropEffect = "move";
-    e.dataTransfer.setData("text/plain", v)
+    e.dataTransfer.setData("text/plain", v);
+    const data = e.dataTransfer.getData("text/plain");
+    let { leftContainer } = this.state;
+    leftContainer.push(data);
+    this.setState({ leftContainer });
   }
 
   allowDrop = ev => {
     ev.preventDefault();
   }
 
-  onDropTop = e => {
+  onDropTop = (e, id) => {
     e.preventDefault();
-    const data = e.dataTransfer.getData("text/plain");
-    let { leftContainer } = this.state;
-    leftContainer.push(data);
-    this.setState({ leftContainer });
   }
   render() {
-    const { items, leftContainer, rightContainer, texts1, texts2 } = this.state;
+    const { items, leftContainer, texts1, ids } = this.state;
+    var tempHtml=[];
+    for( var i = 0 ; i < texts1.length ; i++ ){
+      tempHtml.push(<div id={i+1} className="tile" onDragOver={this.allowDrop} onDrop={(e) => this.onDropTop(e, this.state.ids)}>
+          {this.state.texts1[i].text}
+        </div>)
+    }
 
     return (
       <div>
-        <div style={{ marginTop: '35px' }}>
-          <div style={{ display: 'inline-block' }}>
-            {
-              items.map((item) => {
-                return <p style={styles.para} draggable="true" onDragStart={(e) => this.onDragStart(e, item.no)} >{item.no}</p>
-              })
-            }
-          </div>
+        <div className="labels">
+          {
+            items.map((item) => {
+              return <p className="num" draggable="true" onDragStart={(e) => this.onDragStart(e, item.no)} >{item.no}</p>
+            })
+          }
         </div>
-          <div className="parent" onDragOver={this.allowDrop} onDrop={this.onDropTop}>
-            {
-              leftContainer.map(itm => {
-                return (
-                  <div className="num">
-                    {itm}
-                  </div>
-                )
-              })
-            }
-            {
-              texts1.map(itm => {
-                return (
-                  <div className="tile">
-                    {itm.text}
-                  </div>
-                )
-              })
-            }
-          </div>
+        <div className="parent">
+          {/* {
+            leftContainer.map(itm => {
+              return (
+                <div className="num">
+                  {itm}
+                </div>
+              )
+            })
+          } */}
+          {tempHtml
+            
+            // texts1.map(itm => {
+              // return (
+              //   <div id={this.state.ids} className="tile" onDragOver={this.allowDrop} onDrop={(e) => this.onDropTop(e, this.state.ids)}>
+              //     {itm.text}
+              //   </div>
+              // )
+            // })
+          }
+        </div>
       </div>
     )
   }
