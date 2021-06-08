@@ -62,31 +62,28 @@ class DragDrop extends React.Component {
   onDragStart = (e, v) => {
     e.dataTransfer.dropEffect = "move";
     e.dataTransfer.setData("text/plain", v);
-    const data = e.dataTransfer.getData("text/plain");
-    let { container } = this.state;
-    container.push(data);
-    this.setState({ container });
   }
 
   allowDrop = ev => {
     ev.preventDefault();
   }
 
-  onDropTop = (e, props) => {
+  onDropTop = (e, i) => {
     e.preventDefault();
-    console.log("id:" + props.id + "i:" + props.i);
-    // var val = 
+    const data = e.dataTransfer.getData("text/plain");
+    let { container } = this.state;
+    container[i] = data;
+    this.setState({ container });
   }
 
   render() {
-    const { items, container, texts1, id } = this.state;
+    const { items, container, texts1 } = this.state;
     var tempHtml = [];
-    
     for (var i = 0; i < texts1.length; i++) {
       tempHtml.push(
         <div className="tile">
-          <div className="child1" id={"a" + (i+1)} /*onDragOver={this.allowDrop} onDrop={(e, i) => this.onDropTop.bind(e, i)}*/>10</div>
-          <div className="child2" id={this.state.texts1[i].no} onDragOver={this.allowDrop} onDrop={(e, i) => this.onDropTop.bind(e, i)}>
+          <div className="child1" id={"a" + (i + 1)} /*onDragOver={this.allowDrop} onDrop={(e, i) => this.onDropTop.bind(e, i)}*/>10</div>
+          <div className="child2" id={this.state.texts1[i].no} onDragOver={this.allowDrop} onDrop={(e, i) => this.onDropTop(e, i)}>
             {this.state.texts1[i].text}
           </div>
         </div>
