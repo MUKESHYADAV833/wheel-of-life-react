@@ -55,7 +55,7 @@ class DragDrop extends React.Component {
         { no: 7, text: "Possession" },
         { no: 8, text: "Career" }
       ],
-      container: []
+      container: [null,null,null,null,null,null,null,null]
     }
   }
 
@@ -68,11 +68,11 @@ class DragDrop extends React.Component {
     ev.preventDefault();
   }
 
-  onDropTop = (e, i) => {
+  onDropTop = (e) => {
     e.preventDefault();
     const data = e.dataTransfer.getData("text/plain");
     let { container } = this.state;
-    container[i] = data;
+    container[e.target.id-1] = data;
     this.setState({ container });
   }
 
@@ -80,10 +80,13 @@ class DragDrop extends React.Component {
     const { items, container, texts1 } = this.state;
     var tempHtml = [];
     for (var i = 0; i < texts1.length; i++) {
+      var tileValue=null;
+      if(container[i])
+      tileValue=<div className="child1" id={"a" + (i + 1)} /*onDragOver={this.allowDrop} onDrop={(e, i) => this.onDropTop.bind(e, i)}*/>{container[i]}</div>
       tempHtml.push(
-        <div className="tile">
-          <div className="child1" id={"a" + (i + 1)} /*onDragOver={this.allowDrop} onDrop={(e, i) => this.onDropTop.bind(e, i)}*/>10</div>
-          <div className="child2" id={this.state.texts1[i].no} onDragOver={this.allowDrop} onDrop={(e, i) => this.onDropTop(e, i)}>
+        <div className="tile" onDragOver={this.allowDrop} onDrop={(e) => this.onDropTop(e)}>
+          {tileValue}
+          <div className="child2" id={i+1}>
             {this.state.texts1[i].text}
           </div>
         </div>
