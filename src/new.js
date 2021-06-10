@@ -1,33 +1,4 @@
-import React, { Component } from 'react'
-
-// const styles = {
-//   left: {
-//     width: '250px',
-//     height: '150px',
-//     border: '1px solid #DCDCDC',
-//     float: 'left'
-//   },
-//   right: {
-//     width: '250px',
-//     height: '150px',
-//     border: '1px solid #DCDCDC',
-//     float: 'left',
-//     marginLeft: '40px'
-//   },
-//   droppable: {
-//     margin: '0 auto',
-//     width: '50%',
-//     marginTop: '80px'
-//   },
-//   para: {
-//     marginRight: '11px',
-//     border: '1px solid #DCDCDC',
-//     padding: '12px 16px',
-//     borderRadius: '50%',
-//     width: '15px',
-//     float: 'left'
-//   }
-// }
+import React from 'react';
 
 class DragDrop extends React.Component {
   constructor(props) {
@@ -45,17 +16,17 @@ class DragDrop extends React.Component {
         { no: 9 },
         { no: 10 }
       ],
-      texts1: [
-        { no: 1, text: "Friends and Family" },
-        { no: 2, text: "Relationships" },
-        { no: 3, text: "Wealth" },
-        { no: 4, text: "Personal and Growth" },
-        { no: 5, text: "Health" },
-        { no: 6, text: "Fun and Recreation" },
-        { no: 7, text: "Possession" },
-        { no: 8, text: "Career" }
+      texts: [
+        { text: "Friends and Family" },
+        { text: "Relationships" },
+        { text: "Wealth" },
+        { text: "Personal and Growth" },
+        { text: "Health" },
+        { text: "Fun and Recreation" },
+        { text: "Possession" },
+        { text: "Career" }
       ],
-      container: [null,null,null,null,null,null,null,null]
+      dropped: [null, null, null, null, null, null, null, null]
     }
   }
 
@@ -71,39 +42,27 @@ class DragDrop extends React.Component {
   onDropTop = (e) => {
     e.preventDefault();
     const data = e.dataTransfer.getData("text/plain");
-    let { container } = this.state;
-    container[e.target.id-1] = data;
-    this.setState({ container });
+    let { dropped } = this.state;
+    dropped[e.target.id - 1] = data;
+    this.setState({ dropped });
   }
 
   render() {
-    const { items, container, texts1 } = this.state;
+    const { items, dropped, texts } = this.state;
     var tempHtml = [];
-    for (var i = 0; i < texts1.length; i++) {
-      var tileValue=null;
-      if(container[i])
-      tileValue=<div className="child1" id={"a" + (i + 1)} /*onDragOver={this.allowDrop} onDrop={(e, i) => this.onDropTop.bind(e, i)}*/>{container[i]}</div>
+    for (var i = 0; i < texts.length; i++) {
+      var tileValue = null;
+      if (dropped[i])
+        tileValue = <div className="child1" id={"a" + (i + 1)}>{dropped[i]}</div>
       tempHtml.push(
         <div className="tile" onDragOver={this.allowDrop} onDrop={(e) => this.onDropTop(e)}>
           {tileValue}
-          <div className="child2" id={i+1}>
-            {this.state.texts1[i].text}
+          <div className="child2" id={i + 1}>
+            {this.state.texts[i].text}
           </div>
         </div>
       )
     }
-
-    // for (var i = 1; i <= texts1.length; i++) {
-    //   tempHtml.push(
-    //     <div className="tile">
-    //       <div className="child1" id={"a" + (i)}>10</div>
-    //       <div className="child2" id={this.state.texts1[i-1].no} onDragOver={this.allowDrop} onDrop={(e, id) => this.onDropTop.bind(e, id, i)}>
-    //         {this.state.texts1[i-1].text}
-    //       </div>
-    //     </div>
-    //   )
-    // }
-
     return (
       <div>
         <div className="labels">
@@ -114,25 +73,7 @@ class DragDrop extends React.Component {
           }
         </div>
         <div className="parent">
-          {/* {
-            container.map(itm => {
-              return (
-                <div className="num">
-                  {itm}
-                </div>
-              )
-            })
-          } */}
-          {tempHtml
-
-            // texts1.map(itm => {
-            // return (
-            //   <div id={this.state.ids} className="tile" onDragOver={this.allowDrop} onDrop={(e) => this.onDropTop(e, this.state.ids)}>
-            //     {itm.text}
-            //   </div>
-            // )
-            // })
-          }
+          {tempHtml}
         </div>
       </div>
     )

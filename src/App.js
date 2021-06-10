@@ -1,5 +1,6 @@
 import React from 'react';
-import DragDrop from './new'
+import DragDrop from './new';
+import Submitted from './submitted';
 import SyncIcon from '@material-ui/icons/Sync';
 import DoneIcon from '@material-ui/icons/Done';
 import MailOutlineIcon from '@material-ui/icons/MailOutline';
@@ -7,11 +8,16 @@ import MailOutlineIcon from '@material-ui/icons/MailOutline';
 class UIModel extends React.Component {
   constructor(props) {
     super(props);
-    this.state = null
+    this.state = {
+      display: true
+    }
   }
 
-  showdataentry() {
-    console.log("haii");
+  submit(e) {
+    console.log("submitted");
+    this.setState({
+      display: false
+    });
   }
 
   refreshPage = () => {
@@ -19,6 +25,8 @@ class UIModel extends React.Component {
   }
 
   render() {
+    const { display } = this.state;
+
     return (
       <div>
         <div className="header">
@@ -26,12 +34,11 @@ class UIModel extends React.Component {
           <div id="line">
             <div className="head">Wheel Of Life</div>
             <MailOutlineIcon id="mail" />
-            <DoneIcon id="done" />
-            <SyncIcon onClick={this.refreshPage} id="refresh"/>
+            { display ? <DoneIcon onClick={(e) => this.submit(e)} id="done" /> : null }
+            <SyncIcon onClick={this.refreshPage} id="refresh" />
           </div>
         </div>
-        <DragDrop/>
-
+        <div>{ display ? <DragDrop /> : <Submitted /> }</div>
       </div>
 
     );
