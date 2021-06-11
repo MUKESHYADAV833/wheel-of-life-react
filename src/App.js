@@ -14,7 +14,6 @@ class UIModel extends React.Component {
   }
 
   submit(e) {
-    console.log("submitted");
     this.setState({
       display: false
     });

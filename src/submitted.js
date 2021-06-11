@@ -1,4 +1,5 @@
 import React from 'react';
+import Chart from './chart';
 
 class Submitted extends React.Component {
     constructor(props) {
@@ -11,7 +12,8 @@ class Submitted extends React.Component {
         var a = "Submitted";
         return (
             <div>
-                {this.state.isVisible ? <div>{a}</div> : null}                
+                {this.state.isVisibl}
+                <div><Chart/>Hello chart</div>                
             </div>
         )
     }
