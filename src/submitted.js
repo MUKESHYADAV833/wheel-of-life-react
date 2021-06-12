@@ -13,7 +13,7 @@ class Submitted extends React.Component {
         return (
             <div>
                 {this.state.isVisibl}
-                <div><Chart/>Hello chart</div>                
+                <Chart/>           
             </div>
         )
     }
