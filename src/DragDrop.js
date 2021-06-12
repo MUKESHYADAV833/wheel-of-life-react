@@ -59,7 +59,6 @@ class DragDrop extends React.Component {
       tempHtml.push(
         <div className="tile" onDragOver={this.allowDrop} onDrop={(e) => this.onDropTop(e)}>
           {tileValue}
-          <Submitted dropped={this.state.dropped}/>
           <div className="child2" id={i + 1}>
             {this.state.texts[i].text}
           </div>
@@ -77,6 +76,7 @@ class DragDrop extends React.Component {
         </div>
         <div className="parent">
           {tempHtml}
+          <Submitted dropped={this.state.dropped}/>
         </div>
       </div>
     )
