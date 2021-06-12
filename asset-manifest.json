@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/wheel-of-life-react/static/css/main.1ea3bf6c.chunk.css",
+    "main.js": "/wheel-of-life-react/static/js/main.3dca6636.chunk.js",
+    "main.js.map": "/wheel-of-life-react/static/js/main.3dca6636.chunk.js.map",
+    "runtime-main.js": "/wheel-of-life-react/static/js/runtime-main.199154c1.js",
+    "runtime-main.js.map": "/wheel-of-life-react/static/js/runtime-main.199154c1.js.map",
+    "static/js/2.cfcb5c67.chunk.js": "/wheel-of-life-react/static/js/2.cfcb5c67.chunk.js",
+    "static/js/2.cfcb5c67.chunk.js.map": "/wheel-of-life-react/static/js/2.cfcb5c67.chunk.js.map",
+    "index.html": "/wheel-of-life-react/index.html",
+    "static/css/main.1ea3bf6c.chunk.css.map": "/wheel-of-life-react/static/css/main.1ea3bf6c.chunk.css.map",
+    "static/js/2.cfcb5c67.chunk.js.LICENSE.txt": "/wheel-of-life-react/static/js/2.cfcb5c67.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.199154c1.js",
+    "static/js/2.cfcb5c67.chunk.js",
+    "static/css/main.1ea3bf6c.chunk.css",
+    "static/js/main.3dca6636.chunk.js"
+  ]
+}
