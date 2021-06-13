@@ -76,7 +76,6 @@ class DragDrop extends React.Component {
         </div>
         <div className="parent">
           {tempHtml}
-          <Submitted dropped={this.state.dropped}/>
         </div>
       </div>
     )

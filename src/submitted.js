@@ -6,7 +6,6 @@ class Submitted extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            isVisible: false,
             labels: ["Friends and Family",
                 "Relationships",
                 "Wealth",
@@ -36,16 +35,17 @@ class Submitted extends React.Component {
                     //   '#35014F'
                     //   ],
                     // data: [this.props.dropped]
-                    data: [this.props.dropped]
+                    data: [2, 4, 6, 8, 10]
                 }
             ]
         }
     }
     render() {
-        var a = "Submitted";
+        // const { data } = this.state.datasets;
+        // data = this.props.dropped.map(this.props.dropped);
+        // this.setState({ data });
         return (
             <Pie
-                // dropped={this.props.dropped}
                 data={this.state}
                 options={{
                     title: {
