@@ -1,4 +1,4 @@
-import React from 'react';s
+import React from 'react';
 import { Polar} from 'react-chartjs-2';
 
 
