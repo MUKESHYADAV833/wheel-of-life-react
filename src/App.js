@@ -68,4 +68,3 @@ class UIModel extends React.Component {
 }
 
 export default UIModel;
-
