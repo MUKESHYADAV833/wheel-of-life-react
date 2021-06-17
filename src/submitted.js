@@ -38,17 +38,13 @@ class Submitted extends React.Component {
         console.log(this.state);
         return (
             <Polar
+                width={"400%"}
                 data={this.state}
                 options={{
-                    title: {
-                        display: true,
-                        text: 'Wheel Of Life',
-                        fontSize: 30
-                    },
                     legend: {
                         display: true,
                         position: 'right'
-                    }
+                    }       
                 }}
             />
         )

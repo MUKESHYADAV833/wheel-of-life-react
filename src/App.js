@@ -37,9 +37,17 @@ class UIModel extends React.Component {
   }
 
   submit(e) {
-    this.setState({
-      display: false
-    });
+    // this.state.dropped.forEach(element => {
+    //   if (element == null) {
+    //     alert("Cannot submit an empty value");
+    //     return;
+    //   }
+    //   else {
+        this.setState({
+          display: false
+        });
+    //   }
+    // });
   }
 
   refreshPage = () => {
@@ -55,12 +63,11 @@ class UIModel extends React.Component {
           <img id="logo" src='./wings2life.png' />
           <div id="line">
             <div className="head">Wheel Of Life</div>
-            <MailOutlineIcon id="mail" />
-            { display ? <DoneIcon onClick={(e) => this.submit(e)} id="done" /> : null }
+            {display ? <DoneIcon onClick={(e) => this.submit(e)} id="done" /> : <MailOutlineIcon id="mail" />}
             <SyncIcon onClick={this.refreshPage} id="refresh" />
           </div>
         </div>
-        <div>{ display ? <DragDrop state={this.state} /> : <Submitted dropped={this.state.dropped} /> }</div>
+        <div>{display ? <DragDrop state={this.state} /> : <Submitted dropped={this.state.dropped} />}</div>
       </div>
 
     );
@@ -68,3 +75,4 @@ class UIModel extends React.Component {
 }
 
 export default UIModel;
+
