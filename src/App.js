@@ -4,6 +4,7 @@ import Submitted from './submitted';
 import SyncIcon from '@material-ui/icons/Sync';
 import DoneIcon from '@material-ui/icons/Done';
 import MailOutlineIcon from '@material-ui/icons/MailOutline';
+import Example from './email';
 
 class UIModel extends React.Component {
   constructor(props) {
@@ -49,6 +50,9 @@ class UIModel extends React.Component {
     //   }
     // });
   }
+  email(e){
+    <Example/>
+  }
 
   refreshPage = () => {
     window.location.reload();
@@ -63,11 +67,13 @@ class UIModel extends React.Component {
           <img id="logo" src='./wings2life.png' />
           <div id="line">
             <div className="head">Wheel Of Life</div>
-            {display ? <DoneIcon onClick={(e) => this.submit(e)} id="done" /> : <MailOutlineIcon id="mail" />}
+            {display ? <DoneIcon onClick={(e) => this.submit(e)} id="done" /> : <MailOutlineIcon id="mail" onClick={(e)=>this.email(e)}/>}
             <SyncIcon onClick={this.refreshPage} id="refresh" />
           </div>
         </div>
         <div>{display ? <DragDrop state={this.state} /> : <Submitted dropped={this.state.dropped} />}</div>
+        {/* <div>{display ? null : <Example/>}</div> */}
+
       </div>
 
     );
