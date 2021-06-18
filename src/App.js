@@ -10,7 +10,8 @@ class UIModel extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      display: true,
+      toggleDisplay: true,
+      mailDisplay: false,
       items: [
         { no: 1 },
         { no: 2 },
@@ -44,14 +45,16 @@ class UIModel extends React.Component {
     //     return;
     //   }
     //   else {
-        this.setState({
-          display: false
-        });
+    this.setState({
+      toggleDisplay: false
+    });
     //   }
     // });
   }
-  email(e){
-    <Example/>
+  email(e) {
+    this.setState({
+      mailDisplay: true
+    });
   }
 
   refreshPage = () => {
@@ -59,7 +62,7 @@ class UIModel extends React.Component {
   }
 
   render() {
-    const { display } = this.state;
+    const { toggleDisplay, mailDisplay } = this.state;
 
     return (
       <div>
@@ -67,13 +70,12 @@ class UIModel extends React.Component {
           <img id="logo" src='./wings2life.png' />
           <div id="line">
             <div className="head">Wheel Of Life</div>
-            {display ? <DoneIcon onClick={(e) => this.submit(e)} id="done" /> : <MailOutlineIcon id="mail" onClick={(e)=>this.email(e)}/>}
+            {toggleDisplay ? <DoneIcon onClick={(e) => this.submit(e)} id="done" /> : <MailOutlineIcon id="mail" onClick={(e) => this.email(e)} />}
             <SyncIcon onClick={this.refreshPage} id="refresh" />
           </div>
         </div>
-        <div>{display ? <DragDrop state={this.state} /> : <Submitted dropped={this.state.dropped} />}</div>
-        {/* <div>{display ? null : <Example/>}</div> */}
-
+        <div>{toggleDisplay ? <DragDrop state={this.state} /> : <Submitted dropped={this.state.dropped} />}</div>
+        <div>{mailDisplay ? <Example /> : null}</div>
       </div>
 
     );
