@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
-function MyVerticallyCenteredModal(props) {
+export default function MyVerticallyCenteredModal(props) {
   return (
+
     <Modal
       {...props}
       size="lg"
@@ -12,37 +14,16 @@ function MyVerticallyCenteredModal(props) {
     >
       <Modal.Header closeButton>
         <Modal.Title id="contained-modal-title-vcenter">
-          Modal heading
+          Send Email
         </Modal.Title>
       </Modal.Header>
       <Modal.Body>
-        <h4>Centered Modal</h4>
-        <p>
-          Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
-          dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac
-          consectetur ac, vestibulum at eros.
-        </p>
+        <p>Give your mail below so that we can send you a copy of your WHEEL OF LIFE</p>
+        <input type="tel" id="phone" name="phone" placeholder="abc@gmail.com" />
       </Modal.Body>
       <Modal.Footer>
-        <Button onClick={props.onHide}>Close</Button>
+        <Button onClick={props.onHide}>Done</Button>
       </Modal.Footer>
     </Modal>
-  );
-}
-
-export default function Example() {
-  const [modalShow, setModalShow] = React.useState(false);
-
-  return (
-    <>
-      <Button variant="primary" onClick={() => setModalShow(true)}>
-        Launch vertically centered modal
-      </Button>
-
-      <MyVerticallyCenteredModal
-        show={modalShow}
-        onHide={() => setModalShow(false)}
-      />
-    </>
   );
 }

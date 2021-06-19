@@ -4,14 +4,14 @@ import Submitted from './submitted';
 import SyncIcon from '@material-ui/icons/Sync';
 import DoneIcon from '@material-ui/icons/Done';
 import MailOutlineIcon from '@material-ui/icons/MailOutline';
-import Example from './email';
+import MyVerticallyCenteredModal from './email';
 
 class UIModel extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       toggleDisplay: true,
-      mailDisplay: false,
+      modalDisplay: false,
       items: [
         { no: 1 },
         { no: 2 },
@@ -39,21 +39,13 @@ class UIModel extends React.Component {
   }
 
   submit(e) {
-    // this.state.dropped.forEach(element => {
-    //   if (element == null) {
-    //     alert("Cannot submit an empty value");
-    //     return;
-    //   }
-    //   else {
     this.setState({
       toggleDisplay: false
     });
-    //   }
-    // });
   }
   email(e) {
     this.setState({
-      mailDisplay: true
+      modalDisplay: true
     });
   }
 
@@ -62,7 +54,7 @@ class UIModel extends React.Component {
   }
 
   render() {
-    const { toggleDisplay, mailDisplay } = this.state;
+    const { toggleDisplay, modalDisplay } = this.state;
 
     return (
       <div>
@@ -75,7 +67,10 @@ class UIModel extends React.Component {
           </div>
         </div>
         <div>{toggleDisplay ? <DragDrop state={this.state} /> : <Submitted dropped={this.state.dropped} />}</div>
-        <div>{mailDisplay ? <Example /> : null}</div>
+        <div>{modalDisplay ? <MyVerticallyCenteredModal
+          show={modalDisplay}
+          onHide={() => this.setState({modalDisplay:false})}
+        /> : null}</div>
       </div>
 
     );
