@@ -6,6 +6,7 @@ import DoneIcon from '@material-ui/icons/Done';
 import MailOutlineIcon from '@material-ui/icons/MailOutline';
 import MyVerticallyCenteredModal from './email';
 
+
 class UIModel extends React.Component {
   constructor(props) {
     super(props);
@@ -69,7 +70,7 @@ class UIModel extends React.Component {
         <div>{toggleDisplay ? <DragDrop state={this.state} /> : <Submitted dropped={this.state.dropped} />}</div>
         <div>{modalDisplay ? <MyVerticallyCenteredModal
           show={modalDisplay}
-          onHide={() => this.setState({modalDisplay:false})}
+          onHide={() => this.setState({ modalDisplay: false })}
         /> : null}</div>
       </div>
 
