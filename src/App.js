@@ -4,7 +4,7 @@ import Submitted from './submitted';
 import SyncIcon from '@material-ui/icons/Sync';
 import DoneIcon from '@material-ui/icons/Done';
 import MailOutlineIcon from '@material-ui/icons/MailOutline';
-import MyVerticallyCenteredModal from './email';
+import Email from './modal';
 
 
 class UIModel extends React.Component {
@@ -53,6 +53,8 @@ class UIModel extends React.Component {
   refreshPage = () => {
     window.location.reload();
   }
+  
+  openModal = () => this.setState({ modalDisplay: true });
 
   render() {
     const { toggleDisplay, modalDisplay } = this.state;
@@ -68,9 +70,9 @@ class UIModel extends React.Component {
           </div>
         </div>
         <div>{toggleDisplay ? <DragDrop state={this.state} /> : <Submitted dropped={this.state.dropped} />}</div>
-        <div>{modalDisplay ? <MyVerticallyCenteredModal
-          show={modalDisplay}
-          onHide={() => this.setState({ modalDisplay: false })}
+        <div>{modalDisplay ? <Email
+           show={modalDisplay}
+           openModal={() => this.setState({ modalDisplay: false })  }
         /> : null}</div>
       </div>
 

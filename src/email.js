@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { Store } from '@material-ui/icons';
 
 export default function MyVerticallyCenteredModal(props) {
   let handleOnChange = (email) => {
@@ -21,6 +22,10 @@ export default function MyVerticallyCenteredModal(props) {
     }
 
   }
+  let store =(e) =>{
+   const  data = e.target.getData(e.target.value);
+    this.setValue(data);
+  }
 
   const [value, setValue] = useState();
 
@@ -39,7 +44,7 @@ export default function MyVerticallyCenteredModal(props) {
       </Modal.Header>
       <Modal.Body>
         <p>Give your mail below so that we can send you a copy of your WHEEL OF LIFE</p>
-        <input type="email" id="phone" onSubmit={e => setValue(e.target.value)} placeholder="abc@gmail.com" />
+        <input type="email" id="phone" /*onSubmit={e => setValue(e.target.value)} */ onChange ={e => store(e.target.value)} placeholder="abc@gmail.com" />
 
       </Modal.Body>
       <Modal.Footer>
