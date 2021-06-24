@@ -72,7 +72,7 @@ class UIModel extends React.Component {
         <div>{toggleDisplay ? <DragDrop state={this.state} /> : <Submitted dropped={this.state.dropped} />}</div>
         <div>{modalDisplay ? <Email
            show={modalDisplay}
-           openModal={() => this.setState({ modalDisplay: false })  }
+           onHide={() => this.setState({ modalDisplay: false })  }
         /> : null}</div>
       </div>
 
