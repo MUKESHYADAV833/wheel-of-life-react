@@ -7,12 +7,15 @@ import MailOutlineIcon from '@material-ui/icons/MailOutline';
 import Email from './modal';
 
 
+
 class UIModel extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       toggleDisplay: true,
       modalDisplay: false,
+      // dataObject:{},
+      mail:"",
       items: [
         { no: 1 },
         { no: 2 },
@@ -43,6 +46,11 @@ class UIModel extends React.Component {
     this.setState({
       toggleDisplay: false
     });
+    // let {dataObject,texts,dropped} = this.state;
+    // for(var i = 0;i<texts.length;i++){
+
+
+    // }
   }
   email(e) {
     this.setState({
@@ -72,6 +80,9 @@ class UIModel extends React.Component {
         <div>{toggleDisplay ? <DragDrop state={this.state} /> : <Submitted dropped={this.state.dropped} />}</div>
         <div>{modalDisplay ? <Email
            show={modalDisplay}
+            mail={this.state.mail}
+            labels={this.state.texts}
+            values={this.state.dropped}
         /> : null}</div>
       </div>
 

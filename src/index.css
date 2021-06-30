@@ -165,9 +165,15 @@ p{
   cursor: pointer;
 }
 
+.closeBtn{
+  float: right;
+  font-size: x-large;
+  width: 3%;
+}
+
 #off{
   float: right;
-  margin-top: 4%;
+  margin-top: 2%;
   font-size: larger;
   border-radius: 1%;
   color: #fff;
