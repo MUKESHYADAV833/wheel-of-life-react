@@ -10,11 +10,20 @@ class Email extends Component {
         this.state = {
             mail: this.props.mail,
             show: this.props.show,
+            data :
+            {"Friends & Family": 1,
+            "Relationships": 1,
+            "Wealth": 1,
+            "Personal Growth": 1,
+            "Health": 1,
+            "Fun & Recreation": 1,
+            "Possesion": 1,
+            "Career": 1
+        }
         }
         this.mailInput = React.createRef();
 
     
-   this.data = { data1: this.props.labels, data2: this.props.values };
 
     this.template = `
     < !DOCTYPE html>
@@ -82,7 +91,7 @@ class Email extends Component {
 
     }
     sendEmail = () => {
-        let { mail } = this.state;
+        let { mail,data} = this.state;
         mail = this.mailInput.current.value;
         let re = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
         if (re.test(mail)) {
@@ -90,7 +99,7 @@ class Email extends Component {
             emailjs.init('user_AT5nORStcFhAPLlCR9Xy2');
             var templateParams = {
                 reply_to: mail,
-                reportData: <TemplateComponent template={this.template} data={this.data} />
+                reportData: this.template
             };
             emailjs.send('default_service', 'template_jblhwao', templateParams)
                 .then((mail) => {
