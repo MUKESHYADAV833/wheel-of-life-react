@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/wheel-of-life-react/static/css/main.7af3d23e.chunk.css",
-    "main.js": "/wheel-of-life-react/static/js/main.7f8435a0.chunk.js",
-    "main.js.map": "/wheel-of-life-react/static/js/main.7f8435a0.chunk.js.map",
-    "runtime-main.js": "/wheel-of-life-react/static/js/runtime-main.199154c1.js",
-    "runtime-main.js.map": "/wheel-of-life-react/static/js/runtime-main.199154c1.js.map",
-    "static/js/2.664a3c29.chunk.js": "/wheel-of-life-react/static/js/2.664a3c29.chunk.js",
-    "static/js/2.664a3c29.chunk.js.map": "/wheel-of-life-react/static/js/2.664a3c29.chunk.js.map",
-    "index.html": "/wheel-of-life-react/index.html",
-    "static/css/main.7af3d23e.chunk.css.map": "/wheel-of-life-react/static/css/main.7af3d23e.chunk.css.map",
-    "static/js/2.664a3c29.chunk.js.LICENSE.txt": "/wheel-of-life-react/static/js/2.664a3c29.chunk.js.LICENSE.txt"
+    "main.css": "/MUKESHYADAV833/wheel-of-life-react.git/static/css/main.7af3d23e.chunk.css",
+    "main.js": "/MUKESHYADAV833/wheel-of-life-react.git/static/js/main.7f8435a0.chunk.js",
+    "main.js.map": "/MUKESHYADAV833/wheel-of-life-react.git/static/js/main.7f8435a0.chunk.js.map",
+    "runtime-main.js": "/MUKESHYADAV833/wheel-of-life-react.git/static/js/runtime-main.bb44ec1d.js",
+    "runtime-main.js.map": "/MUKESHYADAV833/wheel-of-life-react.git/static/js/runtime-main.bb44ec1d.js.map",
+    "static/js/2.ec538f21.chunk.js": "/MUKESHYADAV833/wheel-of-life-react.git/static/js/2.ec538f21.chunk.js",
+    "static/js/2.ec538f21.chunk.js.map": "/MUKESHYADAV833/wheel-of-life-react.git/static/js/2.ec538f21.chunk.js.map",
+    "index.html": "/MUKESHYADAV833/wheel-of-life-react.git/index.html",
+    "static/css/main.7af3d23e.chunk.css.map": "/MUKESHYADAV833/wheel-of-life-react.git/static/css/main.7af3d23e.chunk.css.map",
+    "static/js/2.ec538f21.chunk.js.LICENSE.txt": "/MUKESHYADAV833/wheel-of-life-react.git/static/js/2.ec538f21.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.199154c1.js",
-    "static/js/2.664a3c29.chunk.js",
+    "static/js/runtime-main.bb44ec1d.js",
+    "static/js/2.ec538f21.chunk.js",
     "static/css/main.7af3d23e.chunk.css",
     "static/js/main.7f8435a0.chunk.js"
   ]
