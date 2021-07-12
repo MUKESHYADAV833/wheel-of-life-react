@@ -49,7 +49,6 @@ class UIModel extends React.Component {
     // let {dataObject,texts,dropped} = this.state;
     // for(var i = 0;i<texts.length;i++){
 
-
     // }
   }
   email(e) {
