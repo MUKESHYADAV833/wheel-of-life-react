@@ -147,7 +147,7 @@ p{
   margin: auto;
   padding: 20px;
   border: 1px solid #888;
-  width: 80%;
+  width: 45%;
   height: 200px;
 
 }
@@ -188,4 +188,8 @@ p{
 
 #phone{
   height: 40px;
+}
+
+#logo{
+  background-image: src("./wings2life.png");
 }
