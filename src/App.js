@@ -44,18 +44,21 @@ class UIModel extends React.Component {
    
   submit(e) {
     var goodToGo = 0;
-    for(var i =0;i<this.state.dropped.length;i++){
-      if(this.state.dropped[i] != null){
-        goodToGo = 1;
-      }
-      else{
-        goodToGo = 0;
-      }
-    }
-    // if( this.state.dropped.includes(null))
-    //   goodToGo = 1;
-    // else
-    //   goodToGo = 0;
+    let { dropped } = this.state
+    // for(var i =0;i<dropped.length;i++){
+    //   if(this.state.dropped[i] != null){
+    //     goodToGo = 1;
+    //   }
+    //   else{
+    //     goodToGo = 0;
+    //   }
+    // }
+
+    if( dropped.includes(null))
+      goodToGo = 0;
+    else
+      goodToGo = 1;
+
     if( goodToGo == 1 ){
       this.setState({
         toggleDisplay: false
@@ -87,7 +90,8 @@ class UIModel extends React.Component {
     return (
       <div>
         <div className="header">
-          {/* <img id="logo" src='./wings2life.png' /> */}
+          <img id="logo" src='../public/wings2life.png' />
+          {/* <img id="logo" src='D:/Projects/wheel-of-life-react/public' /> */}
           <div id="line">
             <div className="head">Wheel Of Life</div>
             {toggleDisplay ? <DoneIcon onClick={(e) => this.submit(e)} id="done" /> : <MailOutlineIcon id="mail" onClick={(e) => this.email(e)} />}
