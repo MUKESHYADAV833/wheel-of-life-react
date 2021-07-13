@@ -41,11 +41,29 @@ class UIModel extends React.Component {
       dropped: [null, null, null, null, null, null, null, null]
     }
   }
-
+   
   submit(e) {
-    this.setState({
-      toggleDisplay: false
-    });
+    var goodToGo = 0;
+    for(var i =0;i<this.state.dropped.length;i++){
+      if(this.state.dropped[i] != null){
+        goodToGo = 1;
+      }
+      else{
+        goodToGo = 0;
+      }
+    }
+    // if( this.state.dropped.includes(null))
+    //   goodToGo = 1;
+    // else
+    //   goodToGo = 0;
+    if( goodToGo == 1 ){
+      this.setState({
+        toggleDisplay: false
+      }); 
+    }
+    else{
+      alert("Please fill all the tiles");
+    }
     // let {dataObject,texts,dropped} = this.state;
     // for(var i = 0;i<texts.length;i++){
 
@@ -69,7 +87,7 @@ class UIModel extends React.Component {
     return (
       <div>
         <div className="header">
-          <img id="logo" src='./wings2life.png' />
+          {/* <img id="logo" src='./wings2life.png' /> */}
           <div id="line">
             <div className="head">Wheel Of Life</div>
             {toggleDisplay ? <DoneIcon onClick={(e) => this.submit(e)} id="done" /> : <MailOutlineIcon id="mail" onClick={(e) => this.email(e)} />}
