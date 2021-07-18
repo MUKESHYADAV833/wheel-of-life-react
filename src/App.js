@@ -5,7 +5,6 @@ import SyncIcon from '@material-ui/icons/Sync';
 import DoneIcon from '@material-ui/icons/Done';
 import MailOutlineIcon from '@material-ui/icons/MailOutline';
 import Email from './modal';
-import Pop from './popup';
 
 class UIModel extends React.Component {
   constructor(props) {
@@ -14,6 +13,7 @@ class UIModel extends React.Component {
       toggleDisplay: true,
       modalDisplay: false,
       numModal: false,
+      data:0,
       // dataObject:{},
       mail: "",
       items: [
