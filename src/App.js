@@ -6,16 +6,16 @@ import DoneIcon from '@material-ui/icons/Done';
 import MailOutlineIcon from '@material-ui/icons/MailOutline';
 import Email from './modal';
 
-
-
 class UIModel extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       toggleDisplay: true,
       modalDisplay: false,
+      numModal: false,
+      data:0,
       // dataObject:{},
-      mail:"",
+      mail: "",
       items: [
         { no: 1 },
         { no: 2 },
@@ -41,7 +41,7 @@ class UIModel extends React.Component {
       dropped: [null, null, null, null, null, null, null, null]
     }
   }
-   
+
   submit(e) {
     var goodToGo = 0;
     let { dropped } = this.state
@@ -54,17 +54,17 @@ class UIModel extends React.Component {
     //   }
     // }
 
-    if( dropped.includes(null))
+    if (dropped.includes(null))
       goodToGo = 0;
     else
       goodToGo = 1;
 
-    if( goodToGo == 1 ){
+    if (goodToGo == 1) {
       this.setState({
         toggleDisplay: false
-      }); 
+      });
     }
-    else{
+    else {
       alert("Please fill all the tiles");
     }
     // let {dataObject,texts,dropped} = this.state;
@@ -81,11 +81,11 @@ class UIModel extends React.Component {
   refreshPage = () => {
     window.location.reload();
   }
-  
+
   openModal = () => this.setState({ modalDisplay: true });
 
   render() {
-    const { toggleDisplay, modalDisplay } = this.state;
+    const { toggleDisplay, modalDisplay, numModal } = this.state;
 
     return (
       <div>
@@ -100,13 +100,14 @@ class UIModel extends React.Component {
         </div>
         <div>{toggleDisplay ? <DragDrop state={this.state} /> : <Submitted dropped={this.state.dropped} />}</div>
         <div>{modalDisplay ? <Email
-           show={modalDisplay}
-            mail={this.state.mail}
-            labels={this.state.texts}
-            values={this.state.dropped}
+          show={modalDisplay}
+          mail={this.state.mail}
+          labels={this.state.texts}
+          values={this.state.dropped}
         /> : null}</div>
-      </div>
+        {/* {numModal ? <Pop /> : null} */}
 
+      </div>
     );
   }
 }
