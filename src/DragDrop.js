@@ -27,6 +27,13 @@ class DragDrop extends React.Component {
   //   this.setState({ dropped });
   // }
 
+  openModal = (e) => {
+    let {index} = this.state;
+    index = e.target.id;
+    this.setState({ numModal: true});
+    console.log(index+"open");
+  }
+
   showValue = (e) => {
     // e.preventDefault();
     // var data = e.target.value;
@@ -36,15 +43,20 @@ class DragDrop extends React.Component {
     // this.setState({ dropped });
     let data = e.target.value;
     let { dropped } = this.state;
-    dropped[e.target.id - 1] = data;
+    const {index} = this.props.state;
+    dropped[index] = data;
+    console.log(index+"haii");
+    // this.setState({dropped }, () => {
+    //   //call back function of set state
+    //   this.closeModal();
+    //   console.log(this.state.dropped)
+    // });
     this.setState({ dropped });
     this.closeModal();
-    console.log(dropped);
+    console.log({dropped});
   }
 
-  openModal = () => {
-    this.setState({ numModal: true });
-  }
+  
 
   closeModal = () => this.setState({ numModal: false });
 
@@ -57,7 +69,7 @@ class DragDrop extends React.Component {
         tileValue = <div className="child1" id={"a" + (i + 1)}></div>
       {
         tempHtml.push(
-          <div className="tile" onClick={() => this.openModal()} onDragOver={this.allowDrop} onDrop={(e) => this.onDropTop(e)}>
+          <div className="tile"  onClick={(e) => this.openModal(e)} onDragOver={this.allowDrop} onDrop={(e) => this.onDropTop(e)}>
             {tileValue}
             <div className="child2" id={i + 1}>
               {this.state.texts[i].text}

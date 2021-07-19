@@ -16,6 +16,7 @@ class UIModel extends React.Component {
       data:0,
       // dataObject:{},
       mail: "",
+      index : 0,
       items: [
         { no: 1 },
         { no: 2 },
