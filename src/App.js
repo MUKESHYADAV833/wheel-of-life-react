@@ -43,6 +43,8 @@ class UIModel extends React.Component {
     }
   }
 
+ 
+
   submit(e) {
     var goodToGo = 0;
     let { dropped } = this.state
@@ -91,7 +93,7 @@ class UIModel extends React.Component {
     return (
       <div>
         <div className="header">
-          <img id="logo" src='../public/wings2life.png' />
+          <img id="logo" src='wheel-of-life-react/wings2life.png' />
           {/* <img id="logo" src='D:/Projects/wheel-of-life-react/public' /> */}
           <div id="line">
             <div className="head">Wheel Of Life</div>
@@ -99,7 +101,7 @@ class UIModel extends React.Component {
             <SyncIcon onClick={this.refreshPage} id="refresh" />
           </div>
         </div>
-        <div>{toggleDisplay ? <DragDrop state={this.state} /> : <Submitted dropped={this.state.dropped} />}</div>
+        <div>{toggleDisplay ? <DragDrop state={this.state}  /> : <Submitted dropped={this.state.dropped} />}</div>
         <div>{modalDisplay ? <Email
           show={modalDisplay}
           mail={this.state.mail}

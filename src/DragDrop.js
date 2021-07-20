@@ -29,29 +29,19 @@ class DragDrop extends React.Component {
 
   openModal = (e) => {
     let {index} = this.state;
-    index = e.target.id;
-    this.setState({ numModal: true});
+    index = e.target.id-1;
+    this.setState({ numModal: true, index: index});
     console.log(index+"open");
   }
 
   showValue = (e) => {
-    // e.preventDefault();
-    // var data = e.target.value;
-    // const data = e.dataTransfer.getData("text/plain");
-    // let { dropped } = this.state;
-    // dropped[e.target.id - 1] = data;
-    // this.setState({ dropped });
     let data = e.target.value;
-    let { dropped } = this.state;
-    const {index} = this.props.state;
+    console.log(data);
+    let {index} = this.state;
+    let {dropped} = this.state;
     dropped[index] = data;
     console.log(index+"haii");
-    // this.setState({dropped }, () => {
-    //   //call back function of set state
-    //   this.closeModal();
-    //   console.log(this.state.dropped)
-    // });
-    this.setState({ dropped });
+    this.setState({ dropped:dropped });
     this.closeModal();
     console.log({dropped});
   }
