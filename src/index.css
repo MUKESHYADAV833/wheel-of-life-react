@@ -141,13 +141,35 @@ p{
   background-color: rgb(0,0,0); /* Fallback color */
   background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
 }
-.modal-content {
+/* .modal-content {
+  background-color: rgb(97 214 255);
+  margin: auto;
+  padding: 0%;
+  border: 1px solid #888;
+  width: 20%;
+  height: 38vh;
+  border-radius: 5%;
+
+} */
+
+#mailModal{
   background-color: rgb(97 214 255);
   margin: auto;
   padding: 20px;
   border: 1px solid #888;
   width: 41%;
-  height: 120%;
+  height: 25%;
+
+}
+
+#numModal{
+  background-color: rgb(97 214 255);
+  margin: auto;
+  padding: 0%;
+  border: 1px solid #888;
+  width: 20%;
+  height: 38vh;
+  border-radius: 5%;
 
 }
 
@@ -166,16 +188,23 @@ p{
 }
 
 .closeBtn{
+  background-color: Transparent;
+  background-repeat: no-repeat;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+  outline: none;
   float: right;
   font-size: x-large;
-  width: 3%;
+  width: 4%;
+
 }
 
 #off{
   float: right;
-  margin-top: 2%;
+  margin-top: 3%;
   font-size: larger;
-  border-radius: 1%;
+  border-radius: 10%;
   color: #fff;
   background-color: #007bff;
   border-color: #007bff;
@@ -188,10 +217,6 @@ p{
 
 #phone{
   height: 40px;
-}
-
-#logo{
-  background-image: src("./wings2life.png");
 }
 
 .hr{
@@ -223,11 +248,12 @@ p{
 .l1{
   font-size: xx-large;
   justify-content: center;
-  margin: 3% 8%;
+  margin: 0%;
   background-color: yellowgreen;
-  width: 8%;
+  width: 25%;
   text-align: center;
   border-radius: 30%;
+  height: 12vh;
 }
 
 
@@ -236,5 +262,107 @@ p{
   display: flex;
     justify-content: center;
     margin: 3% 1%;
+    font-size:large;
+}
+
+.child3{
+  font-size: xxx-large;
+}
+
+#1{
+  background-image: src("./wings2life.png");
+}
+
+@media only screen and (max-width: 600px) {
+  body {
+  height: 100vh;
+  }
+
+  .head{
+    margin: 10% 1%;
+    justify-content: center;
+    text-align: center;
+    font-size: 28px;
+  }
+
+  #done{
+    margin-top: 11%;
     font-size: xx-large;
+  }
+
+  #refresh{
+   margin-top: 11%; 
+   font-size: xx-large;
+  }
+
+  #logo{
+    width: 18%;
+    margin-top: 11%;
+    height: 10%;
+  }
+
+  #mail{
+    margin-top: 11%;
+    font-size: xx-large;
+  }
+
+  #line{
+    width: 77%;
+  }
+
+  #off{
+    margin-top: 2%;
+    font-size: xx-large;
+
+  }
+
+  #contained-modal-title-vcenter {
+    font-size: larger;
+  }
+
+.l1{
+  font-size: xx-large;
+  justify-content: center;
+  /* margin: 3% 8%; */
+  background-color: yellowgreen;
+  width: 29%;
+  text-align: center;
+  border-radius: 17%;
+  height: 12vh;
+
+
+}
+
+
+.closeBtn{
+  border-radius: 26%;
+  width: 20%;
+}
+
+#numModal{
+  background-color: rgb(97 214 255);
+  margin: auto;
+  padding: 0%;
+  border: 1px solid #888;
+  width: 77%;
+  height: 36vh;
+  border-radius: 5%;
+  justify-content: center;
+  text-align: center;
+
+}
+
+#mailModal{
+  width: 78%;
+  height: 34%;
+  margin: 3%;
+
+}
+
+.l1{
+  margin: 0%;
+  height: 12vh;
+}
+
+
 }
