@@ -279,30 +279,29 @@ p{
   }
 
   .head{
-    margin: 10% 1%;
     justify-content: center;
     text-align: center;
-    font-size: 28px;
+    font-size: x-large;
+  }
+
+  .header{
+    margin-top: 2%;
   }
 
   #done{
-    margin-top: 11%;
     font-size: xx-large;
   }
 
   #refresh{
-   margin-top: 11%; 
    font-size: xx-large;
   }
 
   #logo{
-    width: 18%;
-    margin-top: 11%;
+    width: 13%;
     height: 10%;
   }
 
   #mail{
-    margin-top: 11%;
     font-size: xx-large;
   }
 
@@ -311,7 +310,6 @@ p{
   }
 
   #off{
-    margin-top: 2%;
     font-size: xx-large;
 
   }
