@@ -27,24 +27,26 @@ class DragDrop extends React.Component {
   //   this.setState({ dropped });
   // }
 
-  showValue = (e) => {
-    // e.preventDefault();
-    // var data = e.target.value;
-    // const data = e.dataTransfer.getData("text/plain");
-    // let { dropped } = this.state;
-    // dropped[e.target.id - 1] = data;
-    // this.setState({ dropped });
-    let data = e.target.value;
-    let { dropped } = this.state;
-    dropped[e.target.id - 1] = data;
-    this.setState({ dropped });
-    this.closeModal();
-    console.log(dropped);
+  openModal = (e) => {
+    let {index} = this.state;
+    index = e.target.id-1;
+    this.setState({ numModal: true, index: index});
+    console.log(index+"open");
   }
 
-  openModal = () => {
-    this.setState({ numModal: true });
+  showValue = (e) => {
+    let data = e.target.value;
+    console.log(data);
+    let {index} = this.state;
+    let {dropped} = this.state;
+    dropped[index] = data;
+    console.log(index+"haii");
+    this.setState({ dropped:dropped });
+    this.closeModal();
+    console.log({dropped});
   }
+
+  
 
   closeModal = () => this.setState({ numModal: false });
 
@@ -57,13 +59,15 @@ class DragDrop extends React.Component {
         tileValue = <div className="child1" id={"a" + (i + 1)}></div>
       {
         tempHtml.push(
-          <div className="tile" onClick={() => this.openModal()} onDragOver={this.allowDrop} onDrop={(e) => this.onDropTop(e)}>
+          <div className="tile" onClick={(e) => this.openModal(e)} onDragOver={this.allowDrop} onDrop={(e) => this.onDropTop(e)}>
             {tileValue}
-            <div className="child2" id={i + 1}>
-              {this.state.texts[i].text}
-              <hr className="hr" />
-              {dropped[i]}
+            {/* <img src='wheel-of-life-react/img1.png' /> */}
 
+            <div className="child2" id={ i + 1}>
+              {this.state.texts[i].text}
+              <div className="child3">
+              {dropped[i]}
+              </div>
             </div>
           </div>
         )
@@ -81,10 +85,7 @@ class DragDrop extends React.Component {
         <div className="parent">
           {tempHtml}
         </div>
-        <Modal show={this.state.numModal}>
-          <Modal.Header >
-            <Modal.Title></Modal.Title>
-          </Modal.Header>
+        <Modal id="numModal" show={this.state.numModal} onHide = {() => this.closeModal()} >
           <Modal.Body>
             <div className="num1">
               <Button value="1" onClick={e => this.showValue(e)} className="l1">1</Button>
@@ -106,9 +107,6 @@ class DragDrop extends React.Component {
 
             </div>
           </Modal.Body>
-          <Modal.Footer>
-
-          </Modal.Footer>
         </Modal>
       </div>
     )
