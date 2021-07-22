@@ -40,32 +40,22 @@ class UIModel extends React.Component {
         { text: "Career" }
       ],
       images: [
-        { image: 'wheel-of-life-react/img1.png' },
-        { image: 'wheel-of-life-react/img2.png' },
-        { image: 'wheel-of-life-react/img3.png' },
-        { image: 'wheel-of-life-react/img4.png' },
-        { image: 'wheel-of-life-react/img5.png' },
-        { image: 'wheel-of-life-react/img6.png' },
-        { image: 'wheel-of-life-react/img7.png' },
-        { image: 'wheel-of-life-react/img8.png' }
+        { src: 'wheel-of-life-react/img1.png' },
+        { src: 'wheel-of-life-react/img2.png' },
+        { src: 'wheel-of-life-react/img3.png' },
+        { src: 'wheel-of-life-react/img4.png' },
+        { src: 'wheel-of-life-react/img5.png' },
+        { src: 'wheel-of-life-react/img6.png' },
+        { src: 'wheel-of-life-react/img7.png' },
+        { src: 'wheel-of-life-react/img8.png' }
       ],
       dropped: [null, null, null, null, null, null, null, null]
     }
   }
 
-
-
   submit(e) {
     var goodToGo = 0;
     let { dropped } = this.state
-    // for(var i =0;i<dropped.length;i++){
-    //   if(this.state.dropped[i] != null){
-    //     goodToGo = 1;
-    //   }
-    //   else{
-    //     goodToGo = 0;
-    //   }
-    // }
 
     if (dropped.includes(null))
       goodToGo = 0;
@@ -80,11 +70,8 @@ class UIModel extends React.Component {
     else {
       alert("Please fill all the tiles");
     }
-    // let {dataObject,texts,dropped} = this.state;
-    // for(var i = 0;i<texts.length;i++){
-
-    // }
   }
+  
   email(e) {
     this.setState({
       modalDisplay: true
@@ -104,7 +91,6 @@ class UIModel extends React.Component {
       <div>
         <div className="header">
           <img id="logo" src='wheel-of-life-react/wings2life.png' />
-          {/* <img id="logo" src='D:/Projects/wheel-of-life-react/public' /> */}
           <div id="line">
             <div className="head">Wheel Of Life</div>
             {toggleDisplay ? <DoneIcon onClick={(e) => this.submit(e)} id="done" /> : <MailOutlineIcon id="mail" onClick={(e) => this.email(e)} />}
@@ -118,8 +104,6 @@ class UIModel extends React.Component {
           labels={this.state.texts}
           values={this.state.dropped}
         /> : null}</div>
-        {/* {numModal ? <Pop /> : null} */}
-
       </div>
     );
   }
