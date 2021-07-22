@@ -13,10 +13,10 @@ class UIModel extends React.Component {
       toggleDisplay: true,
       modalDisplay: false,
       numModal: false,
-      data:0,
+      data: 0,
       // dataObject:{},
       mail: "",
-      index : 0,
+      index: 0,
       items: [
         { no: 1 },
         { no: 2 },
@@ -39,11 +39,21 @@ class UIModel extends React.Component {
         { text: "Possession" },
         { text: "Career" }
       ],
+      images: [
+        { image: 'wheel-of-life-react/img1.png' },
+        { image: 'wheel-of-life-react/img2.png' },
+        { image: 'wheel-of-life-react/img3.png' },
+        { image: 'wheel-of-life-react/img4.png' },
+        { image: 'wheel-of-life-react/img5.png' },
+        { image: 'wheel-of-life-react/img6.png' },
+        { image: 'wheel-of-life-react/img7.png' },
+        { image: 'wheel-of-life-react/img8.png' }
+      ],
       dropped: [null, null, null, null, null, null, null, null]
     }
   }
 
- 
+
 
   submit(e) {
     var goodToGo = 0;
@@ -101,7 +111,7 @@ class UIModel extends React.Component {
             <SyncIcon onClick={this.refreshPage} id="refresh" />
           </div>
         </div>
-        <div>{toggleDisplay ? <DragDrop state={this.state}  /> : <Submitted dropped={this.state.dropped} />}</div>
+        <div>{toggleDisplay ? <DragDrop state={this.state} /> : <Submitted dropped={this.state.dropped} />}</div>
         <div>{modalDisplay ? <Email
           show={modalDisplay}
           mail={this.state.mail}

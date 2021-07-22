@@ -61,9 +61,8 @@ class DragDrop extends React.Component {
         tempHtml.push(
           <div className="tile" onClick={(e) => this.openModal(e)} onDragOver={this.allowDrop} onDrop={(e) => this.onDropTop(e)}>
             {tileValue}
-            {/* <img src='wheel-of-life-react/img1.png' /> */}
-
-            <div className="child2" id={ i + 1}>
+            <div className="child2" id={i + 1}>
+              {this.state.images[i].image}
               {this.state.texts[i].text}
               <div className="child3">
               {dropped[i]}
