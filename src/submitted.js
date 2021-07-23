@@ -1,5 +1,5 @@
 import React from 'react';
-import { Polar} from 'react-chartjs-2';
+import { Polar } from 'react-chartjs-2';
 
 
 class Submitted extends React.Component {
@@ -30,7 +30,7 @@ class Submitted extends React.Component {
                     data: this.props.dropped
                 }
             ]
-           
+
         }
     }
 
@@ -44,7 +44,7 @@ class Submitted extends React.Component {
                     legend: {
                         display: true,
                         position: 'right'
-                    }       
+                    }
                 }}
             />
         )
