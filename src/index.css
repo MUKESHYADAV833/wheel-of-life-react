@@ -136,7 +136,7 @@ p{
 }
 
 #numModal{
-  background-color: rgb(97 214 255);
+  background-color:#12a1d4  ;
   margin: auto;
   padding: 0%;
   border: 1px solid #888;
@@ -201,6 +201,7 @@ p{
 .num2{
   display: flex;
   justify-content: center;
+  margin: 3% 0%;
 
 }
 
@@ -215,23 +216,32 @@ p{
 }
 
 .l1{
-  font-size: xx-large;
-  justify-content: center;
-  margin: 0%;
-  background-color: yellowgreen;
-  width: 25%;
-  text-align: center;
-  border-radius: 30%;
-  height: 12vh;
+font-size: xx-large;
+    justify-content: center;
+    background-color: rgb(97 214 255 / 66%);
+    width: 25%;
+    text-align: center;
+    height: 11vh;
+    /* color: white; */
+    margin: 1%;
+    /* opacity: 35%; */
+    /* z-index: 9; */
+    border: solid rgb(97 214 255 / 66%);
 }
 
 
 
 .title{
   display: flex;
-  justify-content: center;
-  margin: 3% 1%;
-  font-size:large;
+    justify-content: center;
+    /* margin: 0% 0%; */
+    font-size: large;
+    background-color:white;
+    width: 49%;
+    /* border-radius: 24%; */
+    margin: 1% 1%;
+    opacity: 35%;
+
 }
 
 .child3{
@@ -286,12 +296,13 @@ p{
 .l1{
   font-size: xx-large;
   justify-content: center;
-  /* margin: 3% 8%; */
-  background-color: yellowgreen;
-  width: 29%;
+  background-color: rgb(97 214 255 / 66%);
+  width: 25%;
   text-align: center;
-  border-radius: 17%;
-  height: 12vh;
+  height: 11vh;
+  margin: 1%;
+
+  border: solid rgb(97 214 255 / 66%);
 }
 
 

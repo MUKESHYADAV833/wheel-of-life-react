@@ -73,7 +73,7 @@ class DragDrop extends React.Component {
             </div>
             <div className="num2">
               <Button value="5" onClick={((e) => this.showValue(e))} className="l1">5</Button>
-              <div className="title">SELECT</div>
+              <div className="title"></div>
               <Button value="6" onClick={((e) => this.showValue(e))} className="l1">6</Button>
             </div>
             <div className="num3">
